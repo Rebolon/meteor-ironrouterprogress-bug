@@ -1,0 +1,14 @@
+<template name="layout">
+    <div class="container">
+        {{> yield}}
+    </div>
+</template>
+
+<template name="mainApp">
+  <ul>
+  {{#each getItems}}
+    <li>{{title}}</li>
+  {{/each}}
+  </ul>
+  <button name="loadMore">see more</button>
+</template>
