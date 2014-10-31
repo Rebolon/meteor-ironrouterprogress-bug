@@ -20,7 +20,7 @@ Meteor.startup(function(){
   ItemsController = RouteController.extend({  
     template: "mainApp",
 
-    waitOn: function funcClientRouteWaitOnSearch() {
+    subscriptions: function funcClientRouteWaitOnSearch() {
       return [
         Meteor.subscribe("items", Session.get('loadMore')),
       ];
@@ -29,6 +29,8 @@ Meteor.startup(function(){
     action: function funcClientRouteActionSearch() {
       if (this.ready())
         this.render();
+      else
+        this.next();
     }
 
   });
