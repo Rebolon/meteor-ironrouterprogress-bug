@@ -27,7 +27,8 @@ Meteor.startup(function(){
     },
 
     action: function funcClientRouteActionSearch() {
-      this.render();
+      if (this.ready())
+        this.render();
     }
 
   });
